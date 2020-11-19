@@ -16,7 +16,7 @@ function searchCity(cityName) {
     $("#forecast").empty();
     if (cityName) {
         $.ajax({
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${cityName.split().join("+")}&appid=${apiKey}`,
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName.split().join("+")}&appid=${apiKey}`,
             type: "GET",
             crossDomain: true,
             dataType: 'jsonp',
@@ -35,7 +35,7 @@ function searchCity(cityName) {
 
 function displayCity(cityData) {
     $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/uvi?lat=${cityData.coord.lat}&lon=${cityData.coord.lon}&appid=${apiKey}`,
+        url: `https://api.openweathermap.org/data/2.5/uvi?lat=${cityData.coord.lat}&lon=${cityData.coord.lon}&appid=${apiKey}`,
         type: "GET",
         crossDomain: true,
         dataType: 'json',
@@ -44,7 +44,7 @@ function displayCity(cityData) {
         const date = new Date(cityData.dt * 1000);
         const currentData = $("<div>").addClass("col-md-6")
         const cityName = $("<h1>").text(`${cityData.name} (${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}) `);
-        const weatherImg = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + cityData.weather[0].icon + "@2x.png")
+        const weatherImg = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + cityData.weather[0].icon + "@2x.png")
         cityName.append(weatherImg);
         const temp = $("<p>").text("Temperature: " + (Math.round((cityData.main.temp - 273.15) * 9 / 5 + 32) * 100) / 100 + " °F");
         const hum = $("<p>").text("Humidity: " + cityData.main.humidity + "%");
@@ -83,7 +83,7 @@ function displayCity(cityData) {
 
 function forecast(cityName) {
     $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/forecast?q=${cityName.split().join("+")}&appid=${apiKey}`,
+        url: `https://api.openweathermap.org/data/2.5/forecast?q=${cityName.split().join("+")}&appid=${apiKey}`,
         type: "GET",
         crossDomain: true,
         dataType: 'json',
@@ -95,7 +95,7 @@ function forecast(cityName) {
             const datePieces = unamericanDate.split("-");
             const americanDate = `${datePieces[1]}/${datePieces[2]}/${datePieces[0]}`;
             const date = $("<h4>").text(americanDate).addClass("text-white");
-            const weatherImg = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
+            const weatherImg = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
             const temp = $("<p>").text("Temp: " + (Math.round((forecast.list[i].main.temp - 273.15) * 9 / 5 + 32) * 100) / 100 + " °F").addClass("text-white");
             const hum = $("<p>").text("Humidity: " + forecast.list[i].main.humidity + "%").addClass("text-white");
             cityForecast
