@@ -13,7 +13,7 @@ A weather dashboard created using OpenWeatherMap's API.
 
 ## Usage
 
-Follow link [here](). Simply enter the city of interest into the search bar, click search, and weather information pertaining to the entered city will populate the dashboard. The last ten cities will be saved in the left column for reuse if necessary.
+Follow link [here](https://artuis.github.io/Weather-Dashboard/). Simply enter the city of interest into the search bar, click search, and weather information pertaining to the entered city will populate the dashboard. The last ten cities will be saved in the left column for reuse if necessary.
 
 ## License
 
