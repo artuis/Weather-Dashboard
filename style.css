@@ -1,0 +1,35 @@
+nav h1 {
+    margin: 10px auto;
+}
+
+#current img {
+    display: inline-block;
+}
+
+.left {
+    padding: 20px;
+}
+
+.favorable {
+    background-color:green;
+    color : white;
+}
+
+.moderate {
+    background-color:yellow;
+    color : black;
+}
+
+.severe {
+    background-color:red;
+    color : white;
+}
+
+span {
+    
+    padding : 10px;
+}
+
+input {
+    margin: 20px;
+}
